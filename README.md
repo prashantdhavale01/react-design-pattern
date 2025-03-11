@@ -1,54 +1,28 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# React Best Practices & Design Patterns
 
-Currently, two official plugins are available:
+## 📌 Code Principles
+- ✅ **Readable**: Clean and well-structured code.
+- ✅ **Reusable**: Components and hooks should be modular.
+- ✅ **Maintainable**: Easy to debug and update.
+- ✅ **Scalable**: Can handle growing application complexity.
+- ✅ **Optimized**: Uses best performance practices.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 React Design Patterns
 
-## Expanding the ESLint configuration
+### 1️⃣ Component Pattern (Separation of Concerns)
+- **Smart (Container) Component** → Handles state and API calls.
+- **Dumb (Presentation) Component** → Displays UI and receives props.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 2️⃣ Custom Hooks Pattern
+- Encapsulates reusable logic (e.g., `useFetch`, `useAuth`).
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### 3️⃣ Higher-Order Component (HOC)
+- Enhances components with extra functionality (e.g., authentication).
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 4️⃣ Provider Pattern (Context API)
+- Manages global state and avoids prop drilling.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 📌 Performance Optimization Tips
+- ✅ **Use Memoization (`useMemo`, `useCallback`)** to optimize expe
