@@ -1,5 +1,8 @@
 import {useState, useEffect} from 'react'
 import ProductList from '../components/ProductList';
+import withLoading from '../components/HOC';
+
+const ProductListWithLoading = withLoading(ProductList);
 
 const Products = () => {
 
@@ -26,11 +29,8 @@ const Products = () => {
     fetchProducts();
   }, [])
 
-  return (
-    <>
-      <ProductList products={products} loading={loading} error={error} />
-    </>
-  )
+  // return <ProductList products={products} loading={loading} error={error} /> 
+  return <ProductListWithLoading products={products} loading={loading} error={error} />; //HOC
 }
 
 export default Products

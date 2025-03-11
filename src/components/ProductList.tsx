@@ -9,10 +9,7 @@ interface ProductListProps {
   error: boolean;
 }
 
-const ProductList: React.FC<ProductListProps> = ({ products, loading, error }) => {
-  if(loading) return <div>Is Loading...</div>;
-  if(error) return <div>Error loading products. Please try again later.</div>;
-
+const ProductList: React.FC<ProductListProps> = ({ products }) => {
   return (
     <>
       <h2>Products List</h2>
